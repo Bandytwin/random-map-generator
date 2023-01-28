@@ -1,0 +1,252 @@
+{
+    "type": "random-map-generator-layout",
+    "name": "3 Players",
+    "description": "A mod random map layout for three players",
+    "version": "1.0.1",
+    "playerCount": 3,
+    "size": 115,
+    "layouts": [
+        {
+        "name": "1",
+        "nodes": [
+            {
+                "comment" : "Player start region",
+                "id": 1,
+                "group": 1,
+                "player": 1,
+                "point": {"x": [0.5, 0.5], "y": [0.9, 0.9]},
+                "fill": 0.05,
+                "region_identifier": ["player_start"],
+                "primary_building": ["AgnosticTown"],
+                "isClaimed": true,
+                "difficulty" : [15000, 20000],
+                "children" :
+                [
+                    {
+                        "id" : 101,
+                        "fill" : 0,
+                        "parentGrowthBeforeBirth" : 0.50,
+                        "group" : 101,
+                        "guardChance" : 1,
+                        "difficulty" : [4500, 6500],
+                        "region_identifier" : ["treasure_medium"],
+                        "spawnChance" : 1
+                    },
+                    {
+                        "id" : 102,
+                        "fill" : 0,
+                        "parentGrowthBeforeBirth" : 0.75,
+                        "group" : 102,
+                        "guardChance" : 1,
+                        "difficulty": [7500, 10000],
+                        "region_identifier" : ["treasure_high"],
+                        "spawnChance" : 0.75
+                    },
+                    {
+                        "id" : 103,
+                        "fill" : 0.025,
+                        "parentGrowthBeforeBirth" : 0.25,
+                        "group" : 103,
+                        "guardChance" : 1,
+                        "difficulty" : [9000, 12000],
+                        "region_identifier" : ["center"],
+                        "spawnChance" : 0.5
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "player": 2,
+                "group": 1,
+                "point": {"x": [0.8, 0.8], "y": [0.3, 0.3]},
+                "children" :
+                [
+                    {
+                        "id" : 201,
+                        "group" : 101
+                    },
+                    {
+                        "id" : 202,
+                        "group" : 102
+                    },
+                    {
+                        "id" : 203,
+                        "group" : 103
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "group": 1,
+                "player": 3,
+                "point": {"x": [0.2, 0.2], "y": [0.3, 0.3]},
+                "children" :
+                [
+                    {
+                        "id" : 301,
+                        "group" : 101
+                    },
+                    {
+                        "id" : 302,
+                        "group" : 102
+                    },
+                    {
+                        "id" : 303,
+                        "group" : 103
+                    }
+                ]
+            },
+            {
+                "comment" : "Player in-between region",
+                "id": 4,
+                "group": 2,
+                "point": {"x": [0.8, 0.8], "y": [0.7, 0.7]},
+                "fill" : 0.025,
+                "region_identifier": ["player_support"],
+                "primary_building": ["ArleonSmallSettlement", "BaryaSmallSettlement", "LothSmallSettlement", "RanaSmallSettlement"],
+                "largeCenterArea" : true,
+                "difficultyModifier": 1.25,
+                "children" :
+                [
+                    {
+                        "id" : 401,
+                        "fill" : 0,
+                        "parentGrowthBeforeBirth" : 0.5,
+                        "group" : 401,
+                        "guardChance" : 1,
+                        "difficulty" : [5500, 7500],
+                        "region_identifier" : ["treasure_medium"],
+                        "spawnChance" : 1
+                    },
+                    {
+                        "id" : 402,
+                        "fill" : 0.05,
+                        "parentGrowthBeforeBirth" : 0.75,
+                        "group" : 402,
+                        "guardChance" : 1,
+                        "difficulty" : [10000, 15000],
+                        "region_identifier" : ["center"],
+                        "spawnChance" : 0.33
+                    }
+                ]
+            },
+            {
+                "id": 5,
+                "group": 2,
+                "point": {"x": [0.5, 0.5], "y": [0.1, 0.1]},
+                "children" :
+                [
+                    {
+                        "id" : 501,
+                        "group" : 401
+                    },
+                    {
+                        "id" : 502,
+                        "group" : 402
+                    }
+                ]
+            },
+            {
+                "id": 6,
+                "group": 2,
+                "point": {"x": [0.2, 0.2], "y": [0.7, 0.7]},
+                "children" :
+                [
+                    {
+                        "id" : 601,
+                        "group" : 401
+                    },
+                    {
+                        "id" : 602,
+                        "group" : 402
+                    }
+                ]
+            },
+            {
+                "comment" : "Center region",
+                "id": 7,
+                "group" : 7,
+                "point": {"x": [0.4, 0.6], "y": [0.4, 0.6]},
+                "fill": 0.15,
+                "clearRoads" : 0.55,
+                "difficultyModifier": 1.5,
+                "region_identifier": ["center"],
+                "primary_building": ["ArleonLargeSettlement", "BaryaLargeSettlement", "LothLargeSettlement", "RanaSettlementLarge"],
+                "largeCenterArea" : true,
+                "children" :
+                [
+                    {
+                        "id" : 701,
+                        "group": 701,
+                        "parentGrowthBeforeBirth" : 0.1,
+                        "fill" : 0,
+                        "guardChance" : 0.8,
+                        "difficulty" : [10000, 15000],
+                        "region_identifier" : ["treasure_high"],
+                        "spawnChance" : 1.0
+                    },
+                    {
+                        "id" : 702,
+                        "group": 702,
+                        "parentGrowthBeforeBirth" : 0.5,
+                        "fill" : 0,
+                        "guardChance" : 0.8,
+                        "difficulty" : [7500, 10000],
+                        "region_identifier" : ["treasure_medium", "spire"],
+                        "spawnChance" : 0.8
+                    },
+                    {
+                        "id" : 703,
+                        "fill" : 0.025,
+                        "parentGrowthBeforeBirth" : 0.75,
+                        "group" : 703,
+                        "guardChance" : 1,
+                        "difficulty" : [15000, 20000],
+                        "region_identifier" : ["center"],
+                        "spawnChance" : 0.33
+                    }
+                ]
+            }
+        ],
+        "connections": [
+            {
+                "comment": "Connection between players and their in-between regions",
+                "group": 1,
+                "nodeFrom": 1,
+                "nodeTo": 4,
+                "guardChance": 1,
+                "difficulty" : [4500, 7500],
+                "road": true
+            },
+            {
+                "group": 1,
+                "nodeFrom": 2,
+                "nodeTo": 5
+            },
+            {
+                "group": 1,
+                "nodeFrom": 3,
+                "nodeTo": 6
+            },
+            {
+                "comment": "Connection in-between and center region",
+                "group": 2,
+                "nodeFrom": 4,
+                "nodeTo": 7,
+                "guardChance": 1,
+                "difficulty": [10000, 15000],
+                "road": true
+            },
+            {
+                "group": 2,
+                "nodeFrom": 5,
+                "nodeTo": 7
+            },
+            {
+                "group": 2,
+                "nodeFrom": 6,
+                "nodeTo": 7
+            }
+        ]
+    }]
+}
